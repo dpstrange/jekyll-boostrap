@@ -1,0 +1,52 @@
+# Site Configuration
+title: "Jekyll Bootstrap" # Site title (seo, feed, navigation, masthead)
+description: "The Bootstrap Theme for Jekyll" # Site description (seo, feed, masthead)
+lang: en # locale settings (seo); default: en
+keywords: "jekyll, bootstrap, jeklyll theme" # Default keywords (seo)
+logo: /assets/images/site/logo.png # site logo (navigation, seo)
+date: 2019-09-24 00:00:00 -0500 # site publish date (seo, metadata, footer), e.g. YYYY-MM-DD hh:mm:ss TZD
+
+# Navigation
+url: "https://dpstrange.github.io/jekyll-bootstrap/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the sub-path of your site, e.g. /blog
+permalink: /articles/:title/ # permalink style
+
+# Default Site Settings
+alert: # display site wide alert bar above navigation, e.g. "String", false
+alert_style: # alert style, e.g. primary, secondary, success, danger, warning, info, light, dark; default: primary
+masthead_style: # default masthead style, e.g. banner, plain; default: banner
+featured_image: /assets/images/site/featured-image.jpg # default featured image path (seo, masthead, social, rss), e.g '/path/to/image.jpg', false (hide default featured image)
+author: # default author defined in _data/humans.yml (seo, metadata)
+
+# Default Page Settings
+page_social: # default display social sharing links on pages, e.g. true, false
+page_author: # default display about the author on pages, e.g. true, false
+
+# Default Post Settings
+post_social: true # default display social sharing links on posts, e.g. true, false
+post_author: true # default display about the author on posts, e.g. true, false
+
+# Jekyll Settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      type: "post"
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      type: "page"
+
+markdown: kramdown
+highlighter: rouge
+
+include: [.well-known] # include humans.txt
+
+plugins: [jekyll-paginate]
+
+paginate: 7
+paginate_path: "/articles/page/:num/"

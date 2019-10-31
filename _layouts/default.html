@@ -1,0 +1,19 @@
+<!--
+
+{% include ascii.html %}
+
+{{ site.url }}
+
+-->
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include navigation.html %}
+    {% include masthead.html %}
+    {% include content.html %}
+    {% include footer.html %}
+  </body>
+</html>
