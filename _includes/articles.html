@@ -7,7 +7,7 @@
 <div class="archive">
     {% for post in paginator.posts %}
         <div class="archive-item col-12 pl-0 pr-0 {% unless forloop.first %}mt-5 pt-3 border-top{% endunless %}">
-            <h2 class="mb-0"><a href="{{ post.url }}" class="stretched-link">{{ post.title }}</a></h2>
+            <h2 class="mb-0"><a href="{{ post.url | absolute_url }}" class="stretched-link">{{ post.title }}</a></h2>
             <h6 class="text-muted font-weight-lighter my-0">{{ post.description }}</h6>
             {% unless post.featured_image == false %}
                 {% if post.featured_image %}
