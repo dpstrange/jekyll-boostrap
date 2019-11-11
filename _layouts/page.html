@@ -68,7 +68,7 @@ layout: default
 <div class="mt-5">
   <h1>Social</h1>
   <div class="link-group">
-    <a class="btn btn-primary" href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ site.title }}: {{ page.title }}{% if author.twitter %}&via={{ author.twitter }}{% endif %}&hashtags={{ site.title | slugify }}" target="_blank">Twitter</a>
+    <a class="btn btn-primary" href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ site.title }}: {{ page.title }}{% if author.twitter %}&via={{ author.twitter }}{% endif %}" target="_blank">Twitter</a>
     <a class="btn btn-primary" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ site.title }}: {{ page.title }}{% if excerpt %}&summary={{ page.excerpt }}{% endif %}&source={{ site.url }}" target="_blank">Linkedin</a>
     <a class="btn btn-primary" href="mailto:?subject={{ site.title }}: {{ page.title }}&body={{ page.url | absolute_url }}" target="_blank">Email</a>
   </div>

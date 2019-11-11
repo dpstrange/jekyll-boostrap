@@ -42,7 +42,8 @@ defaults:
       type: "page"
 
 markdown: kramdown
-highlighter: rouge
+kramdown:
+    highlighter: rouge
 
 include: [.well-known] # include humans.txt
 

@@ -9,38 +9,42 @@
 {% endif %}
 
 <header>
-    <nav class="navbar navbar-expand-md position-absolute w-100 pt-5 {% if masthead == 'plain' %}navbar-light text-light{% elsif masthead == 'banner' %}navbar-dark text-dark{% endif %} bg-transparent">
+    <nav class="navbar navbar-expand-md position-absolute w-100 pt-5 {% if masthead == 'plain' %}navbar-light text-dark{% elsif masthead == 'banner' %}navbar-dark text-light{% endif %} bg-transparent">
         <div class="container">
             <a class="navbar-brand" href="{{ site.url }}"><img src="{{ site.logo | absolute_url }}" width="30" height="30" class="align-top mr-3" alt="">{{ site.title }}</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                {% assign menu = site.data.navigation %}
-                {% assign links = menu.main_menu %}
-                {% for link in links %}
-                    {% assign class = "inactive" %}
-                    {% if page.url contains link.url %}
-                        {% assign class = "active" %}
-                    {% endif %}
-                    {% unless link.dropdown %}
-                        <li class="nav-item {{ class | normalize_whitespace }}">
-                            <a class="nav-link" href="{{ link.url | absolute_url }}"{% if link.target %} target="_{{ link.target }}"{% endif %}>{% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %} </i> {{ link.title }}</a>
-                        </li>
-                    {% else %}
-                        {% assign dropdown = link.dropdown %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ link.title }}</a>
-                            <div class="dropdown-menu bg-transparent" aria-labelledby="navbarDropdown">
-                                {% for dropdown_link in dropdown %}
-                                    {% if dropdown_link.title == "divider" %}
-                                        <div class="dropdown-divider"></div>
-                                    {% else %}
-                                        <a class="dropdown-item bg-transparent {{ class | normalize_whitespace }}" href="{{ dropdown_link.url | absolute_url }}"{% if dropdown_link.target %} target="_{{ dropdown_link.target }}"{% endif %}>{% if dropdown_link.icon %}<i class="{{ dropdown_link.icon }}"></i>{% endif %} </i> {{ dropdown_link.title }}</a>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        </li>
-                    {% endunless %}
-                {% endfor %}
+                    {% assign menu = site.data.navigation %}
+                    {% assign links = menu.main_menu %}
+                    {% for link in links %}
+                        {% assign class = "inactive" %}
+                        {% if page.url contains link.url %}
+                            {% assign class = "active" %}
+                        {% endif %}
+                        {% unless link.dropdown %}
+                            <li class="nav-item {{ class | normalize_whitespace }}">
+                                <a class="nav-link" href="{{ link.url | absolute_url }}"{% if link.target %} target="_{{ link.target }}"{% endif %}>{% if link.icon %}<i class="{{ link.icon }}"></i>{% endif %} </i> {{ link.title }}</a>
+                            </li>
+                        {% else %}
+                            {% assign dropdown = link.dropdown %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ link.title }}</a>
+                                <div class="dropdown-menu bg-transparent" aria-labelledby="navbarDropdown">
+                                    {% for dropdown_link in dropdown %}
+                                        {% if dropdown_link.title == "divider" %}
+                                            <div class="dropdown-divider"></div>
+                                        {% else %}
+                                            <a class="dropdown-item bg-transparent {{ class | normalize_whitespace }}" href="{{ dropdown_link.url | absolute_url }}"{% if dropdown_link.target %} target="_{{ dropdown_link.target }}"{% endif %}>{% if dropdown_link.icon %}<i class="{{ dropdown_link.icon }}"></i>{% endif %} </i> {{ dropdown_link.title }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </li>
+                        {% endunless %}
+                    {% endfor %}
+                    <div class="custom-control custom-switch align-self-center">
+                        <input type="checkbox" class="custom-control-input" id="lightSwitch" />
+                        <label class="custom-control-label" for="lightSwitch"><i class="fas fa-sun"></i></label>
+                    </div>
                 </ul>
             </div>
             <button type="button" class="navbar-toggler" data-toggle="modal" data-target="#mobile-menu">
