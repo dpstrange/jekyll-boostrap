@@ -37,7 +37,6 @@ The entire framework is served on officially supported Content Delivery Networks
 - <a href="https://getbootstrap.com/" target="_blank">Bootstrap v4.3.1</a> via `https://stackpath.bootstrapcdn.com/`
 - <a href="https://fontawesome.com/" target="_blank">Font Awesome v5.0.7</a> via `https://use.fontawesome.com/`
 - <a href="https://jquery.com/" target="_blank">jQuery v3.3.1</a> via `https://code.jquery.com/`
-- <a href="https://popper.js.org/" target="_blank">Popper.js v1.14.7</a> via `https://cdnjs.cloudflare.com/`
 - <a href="https://www.bryanbraun.com/anchorjs/" target="_blank">AnchorJS v4.2.0</a> via `https://cdnjs.cloudflare.com/`
 
 ## Default Settings
