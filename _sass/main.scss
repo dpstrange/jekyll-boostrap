@@ -107,7 +107,12 @@ footer {
     }
 
     a, a:active a:hover, a:visited {
-        color: var(--navbar-dark-link-color) !important;
+        color: var(--navbar-dark-link-color);
+    }
+
+    .navbar-toggler {
+        color: var(--navbar-dark-link-color);
+        border-color: var(--navbar-dark-link-color);
     }
 }
 
@@ -121,7 +126,16 @@ footer {
     }
 
     a, a:active a:hover, a:visited {
-        color: var(--navbar-light-link-color) !important;
+        color: var(--navbar-light-link-color);
+    }
+
+    .navbar-toggler {
+        color: var(--navbar-light-link-color);
+        border-color: var(--navbar-light-link-color);
+
+        .navbar-toggler-icon {
+            color: var(--navbar-light-link-color);
+        }
     }
 }
 
