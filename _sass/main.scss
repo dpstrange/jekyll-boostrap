@@ -180,3 +180,7 @@ main {
 *:hover > .anchorjs-link {
     margin-right: -1.125em !important;
 }
+
+:target {
+    padding-top: 0.45em;
+}
